@@ -46,7 +46,9 @@ function Square(props) {
     }
   }
   
+  
   class Game extends React.Component {
+   
     constructor(props){
       super(props);
       this.state= {
@@ -57,6 +59,7 @@ function Square(props) {
         xIsNext: true,
       };
     }
+    
     handleClick(i){
       const history = this.state.history.slice(0, this.state.stepNumber + 1);
       const current = history[history.length - 1];
@@ -97,7 +100,7 @@ function Square(props) {
   
       let status;
       if (winner) {
-        status = 'Champion: ' + winner;
+        status = 'Champion: ' + winner; //winner changed to champion
       } else {
         status = 'Next player: ' + (!this.state.xIsNext ? 'Ninad' : 'Artes');//changed the order in which the players play game
       }
@@ -111,7 +114,7 @@ function Square(props) {
           </div>
           <div className="game-info">
             <div>{ status }</div>
-            
+            <ol>{moves}</ol>
           </div>
         </div>
       );
